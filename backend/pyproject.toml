@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "fastapi-backend"
+name = "your-project-backend"
 version = "0.1.0"
-description = "FastAPI backend with SQLModel"
+description = "FastAPI backend for your project"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 packages = [{ include = "app" }]

@@ -41,11 +41,11 @@ This project provides a solid foundation for building, testing, and deploying fu
 
 <br/>
 
-## Getting started
+## Getting Started
 
 ### Installation
 
-Build fullstack-boilerplate from the source and install dependencies:
+Build from the source and install dependencies:
 
 1. **Clone the repository:**
 
@@ -60,7 +60,6 @@ Build fullstack-boilerplate from the source and install dependencies:
    ```
 
 3. **Set up environment variables:**
-   ⚠️ (replace placeholders with your own secrets, do not commit sensitive data) ⚠️
 
    ```bash
    cp .env.example .env
@@ -69,14 +68,47 @@ Build fullstack-boilerplate from the source and install dependencies:
    cp frontend/.env.example frontend/.env.production  # comment out localhost and uncomment your backend URL
    ```
 
+   ⚠️ Note: Replace placeholders with your own secrets, do not commit sensitive data.
+
 ### Usage
 
-Run the project with:
+Run the project:
 
-1. **Using [Docker Compose](https://docs.docker.com/compose/):**
+1. **Launch with [Docker Compose](https://docs.docker.com/compose/):**
 
    ```bash
    docker compose up --build
+   ```
+
+   ⚠️ Note: The first time you run this command, building images may take a few minutes.
+
+2. **Verify services are running:**
+   Wait until you see "`INFO: Application startup complete`" in the terminal, then open your browser and go to:
+   - Frontend UI: http://localhost:3000
+   - Backend API Docs: http://localhost:8000/docs
+
+### Testing
+
+Run the automated tests using [pytest](https://docs.pytest.org/) within the [Poetry](https://python-poetry.org/) managed virtual environment:
+
+1. **Navigate to the backend directory:**
+
+   ```bash
+   cd backend
+   ```
+
+2. **Run all tests with coverage:**
+
+   ```bash
+   poetry run pytest --cov=app tests/
+   # or
+   poetry run pytest -v --cov=app --cov-report=term-missing tests/  # verbose output
+   ```
+
+3. **Run a specific test file:**
+
+   ```bash
+   poetry run pytest <tests/your_path/filename>
    ```
 
 <br/>
