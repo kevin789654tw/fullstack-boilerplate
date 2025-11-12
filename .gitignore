@@ -36,6 +36,7 @@ logs/
 
 # Trunk cache and analysis results
 .trunk/**
+!.trunkignore
 !.trunk/trunk.yaml
 !.trunk/checks.yaml
 !.trunk/configs/
