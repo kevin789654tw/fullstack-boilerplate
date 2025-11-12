@@ -28,28 +28,35 @@ export const ItemForm: React.FC<ItemFormProps> = ({ onSuccess }) => {
   };
 
   return (
-    <div className="mb-4">
-      <h2 className="text-xl font-bold mb-2">Add New Item</h2>
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="border px-2 py-1 mr-2"
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        className="border px-2 py-1 mr-2"
-      />
-      <Button onClick={handleSubmit}>
-      Add Item
-      </Button>
-      {successMessage && (
-        <span className="text-green-600 font-medium">{successMessage}</span>
-      )}
+    <div className="flex flex-col md:flex-row md:items-center gap-2 w-full max-w-4xl">
+      <h2 className="mb-2 text-xl font-bold">Add New Item</h2>
+      <div className="flex flex-row items-stretch gap-2 flex-1">
+        <div className="flex flex-col md:flex-row gap-2 flex-1">
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="border px-3 py-2 rounded w-full md:flex-1"
+          />
+          <input
+            type="text"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="border px-3 py-2 rounded w-full md:flex-1"
+          />
+        </div>
+
+        <div className="flex-shrink-0">
+          <Button onClick={handleSubmit}>Add Item</Button>
+          {successMessage && (
+            <span className="ml-2 md:ml-0 text-green-600 font-medium">
+              {successMessage}
+            </span>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
